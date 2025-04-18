@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next build",
+    "start": "next start",
+    "predeploy": "npm run build",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.0",
@@ -16,5 +18,9 @@
     "react-icons": "^4.2.0",
     "styled-components": "^5.3.0",
     "styled-normalize": "^8.0.7"
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "homepage": "https://anggilestari.github.io/web_joks"
 }

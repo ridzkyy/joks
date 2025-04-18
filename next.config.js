@@ -1,9 +1,12 @@
-// filepath: /Users/ridzky/Documents/joki/web/web_joks/next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    compiler: {
-      styledComponents: true, // Enable styled-components support
-    },
-  };
-  
-  module.exports = nextConfig;
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  // Required for GitHub Pages compatibility
+  basePath: '/web_joks',
+  assetPrefix: '/web_joks/',
+}
+
+module.exports = nextConfig
