@@ -30,23 +30,31 @@ export const MainImage = styled.img`
 export const List = styled.ul`
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  margin: 3rem 0;
-  
+  margin: 3rem auto;
+  max-width: 1040px;
+  padding: 0;
+  justify-content: center;
+  align-items: stretch; // Make items stretch to match height
+
   @media ${props => props.theme.breakpoints.lg}{
-    margin: 64px 0;
+    margin: 64px auto;
+    padding: 0 20px;
   }
 
   @media ${props => props.theme.breakpoints.md}{
-    margin: 64px 0;
-    gap: 24px
+    grid-template-columns: 1fr;
+    margin: 64px auto;
+    gap: 24px;
+    padding: 0 20px;
   }
   
   @media ${props => props.theme.breakpoints.sm}{
     display: flex;
     flex-direction: column;
-    margin: 32px 0;
+    margin: 32px auto;
+    padding: 0 15px;
   }
 `
 
@@ -98,19 +106,28 @@ export const ListParagraph = styled.p`
 `
 
 export const ListItem = styled.li`
-  max-width: 320px;
+  max-width: 460px; // Increased max-width
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05); // Optional: adds subtle background
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%; // Makes all items same height
+  justify-content: center;
 
-@media ${props => props.theme.breakpoints.md}{
-  max-width: 203px;
-}
+  @media ${props => props.theme.breakpoints.md}{
+    max-width: 203px;
+  }
 
-@media ${props => props.theme.breakpoints.sm}{
-  margin-bottom: 14px;
-  max-width: 320px;
-  flex-direction: row;
-}
+  @media ${props => props.theme.breakpoints.sm}{
+    margin-bottom: 14px;
+    max-width: 320px;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
 `
 
 export const ListIcon = styled.img`

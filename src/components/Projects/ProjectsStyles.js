@@ -1,36 +1,55 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
-  width:100%;
-  height:100%;
-  object-fit: cover;
+  width: 100%;
+  height: 400px; // Increased height
+  object-fit: contain; // Changed to contain to prevent cropping
   overflow: hidden;
+  border-radius: 10px 10px 0 0; // Added rounded corners at top
+  background: #0F1624; // Added background color
+  padding: 10px; // Added padding
 `
 
 export const GridContainer = styled.section`
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-padding: 3rem;
-place-items: center;
-column-gap: 2rem;
-row-gap: 3rem;
-@media ${(props) => props.theme.breakpoints.sm} {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  padding-bottom: 0;
-}
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 3rem;
+  place-items: start; // Changed to start alignment
+  gap: 3rem;
+  
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
 
+  @media ${(props) => props.theme.breakpoints.sm} {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
 `
+
 export const BlogCard = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 600px; // Added minimum height
+  display: flex;
+  flex-direction: column;
+  background: #0F1624; // Added background color
+  
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
+    min-height: auto; // Remove minimum height on mobile
   }
 `;
+
 export const TitleContent = styled.div`
   text-align: center;
   z-index: 20;
