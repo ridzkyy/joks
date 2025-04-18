@@ -11,14 +11,16 @@ const Timeline = () => {
   const carouselRef = useRef();
 
   const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
-  }
+    if (node) { // Pastikan node tidak null
+      return node.scrollTo({ left, behavior: 'smooth' });
+    }
+  };
 
   const handleClick = (e, i) => {
     e.preventDefault();
 
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.5 * (i / TimeLineData.length));
       
       scroll(carouselRef.current, scrollLeft);
     }
@@ -36,17 +38,24 @@ const Timeline = () => {
   // avoids a bug where content is covered up if coming from smaller screen
   useEffect(() => {
     const handleResize = () => {
-      scroll(carouselRef.current, 0);
-    }
-
+      if (carouselRef.current) {
+        scroll(carouselRef.current, 0); // Pastikan carouselRef.current tidak null
+      }
+    };
+  
     window.addEventListener('resize', handleResize);
+  
+    // Cleanup event listener saat komponen di-unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-      The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+        I am a passionate filmmaker, director, and talent with a deep love for storytelling and visual arts. Over the years, I have honed my skills in directing, cinematography, and acting, collaborating with talented teams to bring creative visions to life. My journey has been fueled by a commitment to crafting compelling narratives and producing impactful films that resonate with audiences.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

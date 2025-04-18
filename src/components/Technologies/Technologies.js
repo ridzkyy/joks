@@ -3,51 +3,61 @@ import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
-const Technologies = () =>  (
+import { FaVideo, FaRegLightbulb, FaTheaterMasks, FaEdit, FaCamera } from 'react-icons/fa';
+
+const Technologies = () => (
   <Section id="tech">
     <SectionDivider divider />
-    <SectionTitle>Technologies</SectionTitle>
+    <SectionTitle>Skills</SectionTitle>
     <SectionText>
-      I've worked with a range a technologies in the web development world.
-      From Back-end To Design
+      I have experience in filmmaking and cinematography, working on various projects that involve creative storytelling, visual composition, and technical expertise in video production.
     </SectionText>
     <List>
       <ListItem>
         <picture>
-          <DiReact size="3rem" />
+          <FaRegLightbulb size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>Directing</ListTitle>
           <ListParagraph>
-            Experiece with <br />
-            React.js
+            Expertise in leading creative projects and managing teams to bring visions to life.
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
         <picture>
-          <DiFirebase size="3rem" />
+          <FaVideo size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>Back-End</ListTitle>
+          <ListTitle>Storytelling</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Node and Databases
+            Crafting compelling narratives and visual compositions for impactful storytelling.
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
         <picture>
-          <DiZend size="3rem" />
+          <FaTheaterMasks size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>UI/UX</ListTitle>
+          <ListTitle>Acting</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            tools like Figma
+            Experience performing as a talent in various projects, bringing characters to life.
           </ListParagraph>
         </ListContainer>
       </ListItem>
+      <ListItem>
+        <picture>
+          <FaEdit size="3rem" />
+        </picture>
+        <ListContainer>
+          <ListTitle>Video Editing</ListTitle>
+          <ListParagraph>
+            Proficiency in tools like Adobe Premiere Pro and Final Cut Pro for post-production.
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      
     </List>
     <SectionDivider colorAlt />
   </Section>

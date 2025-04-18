@@ -10,10 +10,11 @@ const Hero = (props) => (
       <LeftSection>
         <SectionTitle main center>
           Welcome To <br />
-          My Personal Portfolio
+          My Personal Portfolio <br />
+          Anggi Lestari Phaja
         </SectionTitle>
         <SectionText>
-        The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+          I'm a filmaker and photographer based in Indonesia. I specialize in creating stunning visuals that tell compelling stories. My work spans various genres, including documentaries, commercials, and narrative films. I am passionate about capturing the essence of moments and bringing ideas to life through the lens.
         </SectionText>
         <Button onClick={props.handleClick}>Learn More</Button>
       </LeftSection>
